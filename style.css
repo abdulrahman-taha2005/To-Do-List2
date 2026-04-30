@@ -1,0 +1,361 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#0f172a;
+  overflow:hidden;
+  position:relative;
+  padding:20px;
+}
+
+/* Background */
+
+.bg1,
+.bg2{
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(120px);
+}
+
+.bg1{
+  background:#8b5cf6;
+  top:-100px;
+  left:-100px;
+}
+
+.bg2{
+  background:#06b6d4;
+  bottom:-100px;
+  right:-100px;
+}
+
+/* Container */
+
+.container{
+  width:100%;
+  max-width:550px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:30px;
+  padding:30px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  z-index:1;
+  animation:fadeIn 0.8s ease;
+}
+
+/* Header */
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.header h1{
+  color:white;
+  font-size:35px;
+}
+
+.header p{
+  color:#cbd5e1;
+  margin-top:5px;
+}
+
+#themeBtn{
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:50%;
+  background:#1e293b;
+  color:white;
+  cursor:pointer;
+  font-size:18px;
+  transition:0.3s;
+}
+
+#themeBtn:hover{
+  transform:rotate(20deg) scale(1.1);
+}
+
+/* Input */
+
+.input-section{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.input-section input,
+.input-section select{
+  padding:15px;
+  border:none;
+  border-radius:15px;
+  background:#1e293b;
+  color:white;
+  outline:none;
+}
+
+.input-section input{
+  flex:1;
+}
+
+#addBtn{
+  width:60px;
+  border:none;
+  border-radius:15px;
+  background:#8b5cf6;
+  color:white;
+  font-size:20px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#addBtn:hover{
+  transform:scale(1.1);
+}
+
+/* Filters */
+
+.filters{
+  display:flex;
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.filter-btn{
+  flex:1;
+  padding:12px;
+  border:none;
+  border-radius:12px;
+  background:#1e293b;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.filter-btn.active{
+  background:#8b5cf6;
+}
+
+.filter-btn:hover{
+  transform:translateY(-3px);
+}
+
+/* Stats */
+
+.stats{
+  display:flex;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.stat-box{
+  flex:1;
+  background:#1e293b;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
+}
+
+.stat-box h2{
+  color:#8b5cf6;
+  font-size:32px;
+}
+
+.stat-box p{
+  color:#cbd5e1;
+  margin-top:5px;
+}
+
+/* Task */
+
+#taskList{
+  list-style:none;
+}
+
+.task{
+  background:#1e293b;
+  padding:18px;
+  border-radius:18px;
+  margin-bottom:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  animation:slideUp 0.4s ease;
+  transition:0.3s;
+}
+
+.task:hover{
+  transform:translateY(-4px);
+}
+
+.task-left{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.check{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  border:2px solid #8b5cf6;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.task.completed .check{
+  background:#8b5cf6;
+}
+
+.task.completed .task-text{
+  text-decoration:line-through;
+  opacity:0.5;
+}
+
+.task-text{
+  color:white;
+  font-size:16px;
+}
+
+.priority{
+  padding:6px 12px;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.low{
+  background:#22c55e;
+}
+
+.medium{
+  background:#f59e0b;
+}
+
+.high{
+  background:#ef4444;
+}
+
+.task-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.delete-btn{
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:12px;
+  background:#ef4444;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.delete-btn:hover{
+  transform:scale(1.1);
+}
+
+/* Empty */
+
+.empty{
+  text-align:center;
+  color:#94a3b8;
+  margin-top:30px;
+}
+
+.empty i{
+  font-size:70px;
+  margin-bottom:15px;
+}
+
+/* Light Mode */
+
+body.light{
+  background:#f3f4f6;
+}
+
+body.light .container{
+  background:white;
+}
+
+body.light .header h1,
+body.light .task-text{
+  color:#111827;
+}
+
+body.light .header p,
+body.light .stat-box p{
+  color:#555;
+}
+
+body.light .input-section input,
+body.light .input-section select,
+body.light .filter-btn,
+body.light .task,
+body.light .stat-box,
+body.light #themeBtn{
+  background:#e5e7eb;
+  color:#111827;
+}
+
+/* Animations */
+
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+    transform:scale(0.9);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+
+}
+
+@keyframes slideUp{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+  .container{
+    padding:20px;
+  }
+
+  .input-section{
+    flex-direction:column;
+  }
+
+  .stats{
+    flex-direction:column;
+  }
+
+}
